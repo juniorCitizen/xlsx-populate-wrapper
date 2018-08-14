@@ -1,0 +1,19 @@
+{
+  "name": "excel-wrapper",
+  "version": "0.0.1",
+  "description": "library for working with excel files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excel",
+    "node.js",
+    "xlsx-populate"
+  ],
+  "author": "juniorcitizen <chiayu.tsai.personal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx-populate": "^1.17.0"
+  }
+}
