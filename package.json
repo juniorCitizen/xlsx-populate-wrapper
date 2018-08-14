@@ -1,5 +1,5 @@
 {
-  "name": "excel-wrapper",
+  "name": "xlsx-populate-wrapper",
   "version": "0.0.1",
   "description": "library for working with excel files",
   "main": "index.js",
