@@ -47,7 +47,7 @@ class Worksheet {
    */
 
   /**
-   * get worksheet data in different formats
+   * get worksheet data in both json and aoa formats
    *
    * @returns {WorksheetData} worksheet data object containing column headers, data in aoa and json formats
    */
