@@ -38,10 +38,9 @@ class Worksheet {
   }
 
   /**
-   * worksheetData format definition
+   * custom 'WorksheetData' object definition
    *
    * @typedef {Object} WorksheetData
-   * @property {Object} worksheet - xlsx-populate.sheet([name of sheet]) object
    * @property {string[]} columnHeaders - values of cell 1 on each column
    * @property {(string|number)[][]} aoa - array of arrays representing data in rows
    * @property {Object[]} json - json objects with columnHeader as key to each property
@@ -54,7 +53,6 @@ class Worksheet {
    */
   data() {
     return {
-      worksheet: this._worksheet,
       columnHeaders: this._data.columnHeaders,
       aoa: this._data.aoa,
       json: this._data.json,
@@ -106,12 +104,12 @@ class Workbook {
   /**
    * get dataset of the complete workbook in json format
    *
-   * @returns {Object} get datasets for the complete workbook in json format
+   * @returns {Object} datasets for the complete workbook in json format
    */
   data() {
     let dataset = {}
     for (let key in this._worksheets) {
-      dataset[key] = this._worksheets[key].getData()
+      dataset[key] = this._worksheets[key].data()
     }
     return dataset
   }
@@ -192,10 +190,10 @@ function addWorksheet(workbook, worksheetName, worksheetData) {
 }
 
 /**
- * convert a xlsx-populate workbook object to an array of custom 'Worksheet' objects
+ * convert a xlsx-populate workbook object to an object of custom 'Worksheet' objects indexed by worksheet name
  *
  * @param {Object} workbook - Xlsx-populate workbook object
- * @returns {Worksheet[]} array of custom 'Worksheet' object
+ * @returns {Object} object of custom 'Worksheet' objectobject of custom 'Worksheet' object indexed by worksheet name indexed by worksheet name
  */
 function extractWorksheets(workbook) {
   return workbook.sheets().reduce((worksheets, worksheet) => {
