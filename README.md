@@ -1,3 +1,3 @@
-# excel-wrapper
+# xlsx-populate-wrapper
 
-library for working with excel files
+xlsx-populate wrapper library for working with excel files
