@@ -1,19 +1,41 @@
 {
   "name": "xlsx-populate-wrapper",
   "version": "0.0.3",
-  "description": "library for working with excel files",
+  "description": "xlsx-populate wrapper library for working with excel files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiayutsaipersonal/xlsx-populate-wrapper.git"
   },
   "keywords": [
     "excel",
     "node.js",
     "xlsx-populate"
   ],
-  "author": "juniorcitizen <chiayu.tsai.personal@gmail.com>",
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
+  },
+  "author": "juniorCitizen <chiayu.tsai.personal@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiayutsaipersonal/xlsx-populate-wrapper/issues"
+  },
+  "homepage": "https://github.com/chiayutsaipersonal/xlsx-populate-wrapper#readme",
   "dependencies": {
     "xlsx-populate": "^1.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsdoc": "^3.8.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^4.0.0",
+    "prettier": "^1.14.2"
   }
 }
