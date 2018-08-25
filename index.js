@@ -102,6 +102,16 @@ class Workbook {
   }
 
   /**
+   * get a custom 'Worksheet' instance by name of the worksheet from a custom 'Workbook' instance
+   *
+   * @param {string} worksheetName - name of target worksheet
+   * @returns {Worksheet} custom 'Worksheet' instance
+   */
+  worksheet(worksheetName) {
+    return this._worksheets[worksheetName]
+  }
+
+  /**
    * get dataset of the complete workbook in json format
    *
    * @returns {Object} datasets for the complete workbook in json format
