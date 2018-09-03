@@ -150,6 +150,29 @@ class Workbook {
       throw error
     }
   }
+
+  /**
+   * Prepares a custom worksheetData object from an array of json objects
+   *
+   * @param {Object[]} jsonData - array of records in json format
+   * @param {string[]} columnHeaders - (optional) column title, if not exist, it's determined by the first json obj from jsonData
+   * @returns {WorksheetData} custom 'WorksheetData' object
+   */
+  static wsDataFromJson(jsonData, columnHeaders = null) {
+    const worksheetData = {
+      columnHeaders: columnHeaders || Object.keys(jsonData[0]),
+      json: jsonData,
+      aoa: [],
+    }
+    jsonData.forEach(jsonRecord => {
+      let aoaRecord = []
+      worksheetData.columnHeaders.forEach(header => {
+        aoaRecord.push(jsonRecord[header])
+      })
+      worksheetData.aoa.push(aoaRecord)
+    })
+    return worksheetData
+  }
 }
 
 module.exports = Workbook
