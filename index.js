@@ -88,6 +88,8 @@ class Workbook {
       this._worksheets = extractWorksheets(this._workbook)
       return this
     } catch (error) {
+      console.log('initialization failure')
+      console.log(`workbook: ${filePath}`)
       throw error
     }
   }
@@ -147,6 +149,9 @@ class Workbook {
       // commit workbook to physical excel file on disk
       return await this._workbook.toFileAsync(this._filePath)
     } catch (error) {
+      console.log('worksheet data commit failure')
+      console.log(`workbook: ${this._filePath}`)
+      console.log(`worksheet: ${worksheetName}`)
       throw error
     }
   }
