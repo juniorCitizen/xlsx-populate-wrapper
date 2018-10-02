@@ -177,9 +177,9 @@ class Worksheet {
     const mapFn = header => header.toString()
     const headings = aoaData.shift().map(mapFn)
     const jsonData = aoaData.map(aoaRecord => {
-      const reduceFn = (jsonRecord, heading, index) => {
-        jsonRecord[heading] === aoaRecord[index]
-        return jsonRecord
+      const reduceFn = (obj, prop, index) => {
+        obj[prop] = aoaRecord[index]
+        return obj
       }
       return headings.reduce(reduceFn, {})
     })
