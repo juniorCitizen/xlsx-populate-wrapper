@@ -33,13 +33,22 @@ const XlsxPopulate = require('xlsx-populate')
  */
 class Workbook {
   /**
-   * initialize a Workbook object
+   * instantiate a Workbook class object
    *
    * @param {string} filePath - absolute path to an excel file
-   * @returns {Workbook} Workbook instance
    */
   constructor(filePath) {
     this.filePath = filePath
+    this.workbook = null
+    this.worksheets = []
+  }
+
+  /**
+   * initialize a workbook
+   *
+   * @returns {Promise.<Workbook>} Workbook instance
+   */
+  init() {
     return XlsxPopulate.fromFileAsync(this.filePath)
       .then(workbook => {
         this.workbook = workbook
@@ -49,7 +58,7 @@ class Workbook {
             worksheets.push(new Worksheet(worksheet))
             return worksheets
           }, [])
-        return this
+        return Promise.resolve(this)
       })
       .catch(error => Promise.reject(error))
   }
@@ -60,6 +69,7 @@ class Workbook {
    * @returns {worksheetData[]} array of worksheetData
    */
   data() {
+    if (!this.workbook) throw new Error('not initialized')
     return this.worksheets.map(worksheet => worksheet.data())
   }
 
@@ -70,6 +80,7 @@ class Workbook {
    * @param {Object[]|worksheetData[]} dataset - can be an array of objects or an worksheetData object.  Only 'jsonData' property is required to use the later
    */
   update(worksheetName, dataset) {
+    if (!this.workbook) throw new Error('not initialized')
     const { headings, jsonData } = dataset
     dataset =
       jsonData && headings
@@ -94,6 +105,7 @@ class Workbook {
    * @returns {string[]} - names of existing worksheets
    */
   worksheetNames() {
+    if (!this.workbook) throw new Error('not initialized')
     return this.worksheets.map(worksheet => worksheet.name())
   }
 
@@ -104,6 +116,7 @@ class Workbook {
    * @returns {Worksheet} Worksheet instance
    */
   worksheet(worksheetName) {
+    if (!this.workbook) throw new Error('not initialized')
     const findIndexFn = wsName => wsName === worksheetName
     const wsIndex = this.worksheetNames().findIndex(findIndexFn)
     return wsIndex === -1 ? null : this.worksheets[wsIndex]
@@ -117,6 +130,7 @@ class Workbook {
    * @returns {worksheetData} converted data
    */
   static convertJson(jsonData, headings = null) {
+    if (!this.workbook) throw new Error('not initialized')
     if (!headings) headings = Object.keys(jsonData[0])
     jsonData = jsonData.map(jsonRecord => sanitize(jsonRecord, headings))
     const aoaData = jsonData.map(jsonRecord => {
@@ -136,7 +150,7 @@ class Workbook {
  */
 class Worksheet {
   /**
-   * initialize a worksheet
+   * instantiate a Worksheet class object
    *
    * @param {Object} worksheet - Xlsx-populate.sheet([name of sheet]) object
    */
@@ -216,4 +230,4 @@ function sanitize(object, properties) {
   }, {})
 }
 
-module.exports = Worksheet
+module.exports = Workbook

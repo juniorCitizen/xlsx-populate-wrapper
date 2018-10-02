@@ -67,6 +67,7 @@ new ExcelWrapper(filePath)
 - [Workbook](#Workbook)
   - [new Workbook(filePath)](#new_Workbook_new)
   - _instance_
+    - [.init()](#Workbook+init) ⇒ [<code>Promise.&lt;Workbook&gt;</code>](#Workbook)
     - [.data()](#Workbook+data) ⇒ [<code>Array.&lt;worksheetData&gt;</code>](#worksheetData)
     - [.update(worksheetName, dataset)](#Workbook+update)
     - [.worksheetNames()](#Workbook+worksheetNames) ⇒ <code>Array.&lt;string&gt;</code>
@@ -78,14 +79,20 @@ new ExcelWrapper(filePath)
 
 ### new Workbook(filePath)
 
-initialize a Workbook object
-
-**Returns**: [<code>Workbook</code>](#Workbook) - Workbook instance
+instantiate a Workbook class object
 
 | Param    | Type                | Description                    |
 | -------- | ------------------- | ------------------------------ |
 | filePath | <code>string</code> | absolute path to an excel file |
 
+<a name="Workbook+init"></a>
+
+### workbook.init() ⇒ [<code>Promise.&lt;Workbook&gt;</code>](#Workbook)
+
+initialize a workbook
+
+**Kind**: instance method of [<code>Workbook</code>](#Workbook)
+**Returns**: [<code>Promise.&lt;Workbook&gt;</code>](#Workbook) - Workbook instance
 <a name="Workbook+data"></a>
 
 ### workbook.data() ⇒ [<code>Array.&lt;worksheetData&gt;</code>](#worksheetData)
@@ -159,7 +166,7 @@ convert an array of objects to a worksheetData object
 
 ### new Worksheet(worksheet)
 
-initialize a worksheet
+instantiate a Worksheet class object
 
 | Param     | Type                | Description                                 |
 | --------- | ------------------- | ------------------------------------------- |
@@ -263,6 +270,7 @@ new ExcelWrapper(filePath)
 - [Workbook](#Workbook) : <code>Class</code>
   - [new Workbook(filePath)](#new_Workbook_new)
   - _instance_
+    - [.init()](#Workbook+init) ⇒ [<code>Promise.&lt;Workbook&gt;</code>](#Workbook)
     - [.data()](#Workbook+data) ⇒ [<code>Array.&lt;worksheetData&gt;</code>](#worksheetData)
     - [.update(worksheetName, dataset)](#Workbook+update)
     - [.worksheetNames()](#Workbook+worksheetNames) ⇒ <code>Array.&lt;string&gt;</code>
@@ -274,14 +282,20 @@ new ExcelWrapper(filePath)
 
 ### new Workbook(filePath)
 
-initialize a Workbook object
-
-**Returns**: [<code>Workbook</code>](#Workbook) - Workbook instance
+instantiate a Workbook class object
 
 | Param    | Type                | Description                    |
 | -------- | ------------------- | ------------------------------ |
 | filePath | <code>string</code> | absolute path to an excel file |
 
+<a name="Workbook+init"></a>
+
+### workbook.init() ⇒ [<code>Promise.&lt;Workbook&gt;</code>](#Workbook)
+
+initialize a workbook
+
+**Kind**: instance method of [<code>Workbook</code>](#Workbook)
+**Returns**: [<code>Promise.&lt;Workbook&gt;</code>](#Workbook) - Workbook instance
 <a name="Workbook+data"></a>
 
 ### workbook.data() ⇒ [<code>Array.&lt;worksheetData&gt;</code>](#worksheetData)
@@ -357,7 +371,7 @@ represents an Excel worksheet
 
 ### new Worksheet(worksheet)
 
-initialize a worksheet
+instantiate a Worksheet class object
 
 | Param     | Type                | Description                                 |
 | --------- | ------------------- | ------------------------------------------- |
