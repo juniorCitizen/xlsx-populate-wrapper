@@ -77,18 +77,18 @@ class Workbook {
    * update and persist data of a particular worksheet
    *
    * @param {string} worksheetName - name of target worksheet to update
-   * @param {Object[]|worksheetData[]} dataset - can be an array of objects or an worksheetData object.  Only 'jsonData' property is required to use the later
+   * @param {Object[]|worksheetData[]} worksheetData - can be an array of objects or an worksheetData object.  Only 'jsonData' property is required to use the later
    */
-  update(worksheetName, dataset) {
+  update(worksheetName, worksheetData) {
     if (!this.workbook) throw new Error('not initialized')
-    const { headings, jsonData } = dataset
-    dataset =
+    const { headings, jsonData } = worksheetData
+    worksheetData =
       jsonData && headings
-        ? this.convertJson(jsonData, headings)
-        : this.convertJson(dataset)
+        ? Workbook.convertJson(jsonData, headings)
+        : Workbook.convertJson(worksheetData)
     const worksheet = this.worksheet(worksheetName)
     if (worksheet) {
-      this.worksheet(worksheetName).update(dataset)
+      this.worksheet(worksheetName).update(worksheetData)
       return this.workbook
         .toFileAsync(this.filePath)
         .then(() => Promise.resolve(this))
@@ -130,7 +130,6 @@ class Workbook {
    * @returns {worksheetData} converted data
    */
   static convertJson(jsonData, headings = null) {
-    if (!this.workbook) throw new Error('not initialized')
     if (!headings) headings = Object.keys(jsonData[0])
     jsonData = jsonData.map(jsonRecord => sanitize(jsonRecord, headings))
     const aoaData = jsonData.map(jsonRecord => {
@@ -208,8 +207,8 @@ class Worksheet {
    */
   update({ headings, aoaData }) {
     this.worksheet.usedRange().clear()
-    this.worksheet.cell('A1').value(headings)
-    this.worksheet.cell('B1').value(aoaData)
+    this.worksheet.cell('A1').value([headings])
+    this.worksheet.cell('A2').value(aoaData)
   }
 }
 
