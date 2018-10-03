@@ -1,0 +1,8 @@
+{
+  "typescript.validate.enable": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.jsEnable": true,
+  "tslint.validateWithDefaultConfig": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

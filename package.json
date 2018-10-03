@@ -2,7 +2,8 @@
   "name": "xlsx-populate-wrapper",
   "version": "0.5.4",
   "description": "xlsx-populate wrapper library for working with excel files",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chiayutsaipersonal/xlsx-populate-wrapper.git"
@@ -10,7 +11,8 @@
   "keywords": [
     "excel",
     "node.js",
-    "xlsx-populate"
+    "xlsx-populate",
+    "typescript"
   ],
   "engines": {
     "node": ">=8.12.0",
@@ -26,16 +28,19 @@
     "xlsx-populate": "^1.17.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsdoc": "^3.8.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "prettier": "^1.14.3"
+    "@compodoc/compodoc": "^1.1.5",
+    "@types/node": "^10.11.3",
+    "prettier": "^1.14.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
+    "typescript": "^3.1.1"
   },
   "scripts": {
-    "genDocs": "jsdoc2md src/index.js"
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "dev": "tsc -w",
+    "start": "node dist/index.js"
   }
 }

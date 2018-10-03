@@ -1,0 +1,13 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prettier": true,
+    "no-console": false,
+    "eofline": true
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"]
+}
