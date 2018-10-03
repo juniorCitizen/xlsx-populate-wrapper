@@ -1,6 +1,6 @@
 {
   "name": "xlsx-populate-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "xlsx-populate wrapper library for working with excel files",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
