@@ -1,0 +1,11 @@
+{
+  "typescript.validate.enable": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.jsEnable": true,
+  "tslint.validateWithDefaultConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": false,
+  "prettier.tslintIntegration": false,
+}

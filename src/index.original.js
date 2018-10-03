@@ -69,7 +69,9 @@ class Workbook {
    * @returns {worksheetData[]} array of worksheetData
    */
   data() {
-    if (!this.workbook) throw new Error('not initialized')
+    if (!this.workbook) {
+      throw new Error('not initialized')
+    }
     return this.worksheets.map(worksheet => worksheet.data())
   }
 
@@ -80,7 +82,9 @@ class Workbook {
    * @param {Object[]|worksheetData[]} worksheetData - can be an array of objects or an worksheetData object.  Only 'jsonData' property is required to use the later
    */
   update(worksheetName, worksheetData) {
-    if (!this.workbook) throw new Error('not initialized')
+    if (!this.workbook) {
+      throw new Error('not initialized')
+    }
     const { headings, jsonData } = worksheetData
     worksheetData =
       jsonData && headings
@@ -105,7 +109,9 @@ class Workbook {
    * @returns {string[]} - names of existing worksheets
    */
   worksheetNames() {
-    if (!this.workbook) throw new Error('not initialized')
+    if (!this.workbook) {
+      throw new Error('not initialized')
+    }
     return this.worksheets.map(worksheet => worksheet.name())
   }
 
@@ -116,7 +122,9 @@ class Workbook {
    * @returns {Worksheet} Worksheet instance
    */
   worksheet(worksheetName) {
-    if (!this.workbook) throw new Error('not initialized')
+    if (!this.workbook) {
+      throw new Error('not initialized')
+    }
     const findIndexFn = wsName => wsName === worksheetName
     const wsIndex = this.worksheetNames().findIndex(findIndexFn)
     return wsIndex === -1 ? null : this.worksheets[wsIndex]
@@ -130,7 +138,9 @@ class Workbook {
    * @returns {worksheetData} converted data
    */
   static convertJson(jsonData, headings = null) {
-    if (!headings) headings = Object.keys(jsonData[0])
+    if (!headings) {
+      headings = Object.keys(jsonData[0])
+    }
     jsonData = jsonData.map(jsonRecord => sanitize(jsonRecord, headings))
     const aoaData = jsonData.map(jsonRecord => {
       return headings.reduce((arrayRecord, heading) => {
@@ -228,5 +238,3 @@ function sanitize(object, properties) {
     return newObject
   }, {})
 }
-
-module.exports = Workbook
