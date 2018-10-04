@@ -1,17 +1,19 @@
-import {Workbook} from './workbook'
+export * from './workbook'
 
-export default Workbook
+// import {Workbook} from './workbook'
 
-process.on(
-  'unhandledRejection',
-  (error: any): void => {
-    throw error
-  }
-)
+// export default Workbook
 
-process.on(
-  'uncaughtException',
-  (error: any): void => {
-    throw error
-  }
-)
+// process.on(
+//   'unhandledRejection',
+//   (error: any): void => {
+//     throw error
+//   }
+// )
+
+// process.on(
+//   'uncaughtException',
+//   (error: any): void => {
+//     throw error
+//   }
+// )

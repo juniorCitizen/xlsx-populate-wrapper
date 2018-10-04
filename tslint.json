@@ -9,5 +9,8 @@
     "no-console": false,
     "eofline": true
   },
-  "rulesDirectory": ["tslint-plugin-prettier"]
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules", "dist"]
+  }
 }

@@ -1,0 +1,51 @@
+{
+  "good data": {
+    "headings": ["column a", "column b", "column c"],
+    "aoaData": [
+      ["a","b","c"],
+      ["a","b","c"],
+      ["a","b","c"],
+      ["a","b","c"],
+      ["a","b","c"],
+      ["a","b","c"],
+      ["a","b","c"]
+    ],
+    "jsonData": [
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      },
+      {
+        "column a": "a",
+        "column b": "b",
+        "column c": "c"
+      }
+    ]
+  }
+}

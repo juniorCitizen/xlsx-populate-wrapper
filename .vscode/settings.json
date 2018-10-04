@@ -1,8 +1,21 @@
 {
+  // prettier
+  "prettier.parser": "flow",
+  "prettier.bracketSpacing": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.requireConfig": true,
+  "prettier.tslintIntegration": true,
+  "prettier.disableLanguages": [
+    "vue","json"
+  ],
+  // typescript
   "typescript.validate.enable": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  // tslint
   "tslint.enable": true,
   "tslint.autoFixOnSave": true,
   "tslint.jsEnable": true,
-  "tslint.validateWithDefaultConfig": true,
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "tslint.validateWithDefaultConfig": false,
 }
