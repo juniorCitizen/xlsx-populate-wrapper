@@ -106,10 +106,11 @@ var Workbook = /** @class */ (function () {
                 return aoaRecord;
             }, []);
         });
-        var dataRange = this.workbook.sheet(wsName).usedRange();
+        var worksheet = this.workbook.sheet(wsName);
+        var dataRange = worksheet.usedRange();
         dataRange.clear();
-        dataRange.cell('A1').value([headings]);
-        dataRange.cell('A2').value(aoaData.slice());
+        worksheet.cell('A1').value([headings]);
+        worksheet.cell('A2').value(aoaData.slice());
     };
     Workbook.prototype.getHeadings = function (wsName) {
         return this.workbook

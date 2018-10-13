@@ -70,10 +70,11 @@ class Workbook implements IWorkbook {
         }, [])
       }
     )
-    const dataRange: any = this.workbook.sheet(wsName).usedRange()
+    const worksheet = this.workbook.sheet(wsName)
+    const dataRange: any = worksheet.usedRange()
     dataRange.clear()
-    dataRange.cell('A1').value([headings])
-    dataRange.cell('A2').value([...aoaData])
+    worksheet.cell('A1').value([headings])
+    worksheet.cell('A2').value([...aoaData])
   }
 
   public getHeadings(wsName: string): any[] {
