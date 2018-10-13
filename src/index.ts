@@ -35,6 +35,12 @@ class Workbook implements IWorkbook {
     )
   }
 
+  /**
+   * get data from a particular worksheet
+   *
+   * @param wsName - name of the worksheet to get data from
+   * @return array of objects representing a record
+   */
   public getData(wsName: string): any[] {
     const headings: string[] = this.getHeadings(wsName)
     const aoaData: any[][] = this.getAoaData(wsName)
