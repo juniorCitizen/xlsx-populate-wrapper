@@ -1,6 +1,15 @@
 import * as XPop from 'xlsx-populate'
 
-class Workbook {
+interface IWorkbook {
+  commit: () => Promise<this>
+  getData: (wsName: string) => any[]
+  getHeadings: (wsName: string) => any[]
+  getSheetNames: () => string[]
+  init: () => Promise<this>
+  update: (wsName: string, jsonData: any[]) => void
+}
+
+class Workbook implements IWorkbook {
   private filePath: string = ''
   private workbook: any = null
   constructor(filePath: string = '') {

@@ -1,4 +1,12 @@
-declare class Workbook {
+interface IWorkbook {
+    commit: () => Promise<this>;
+    getData: (wsName: string) => any[];
+    getHeadings: (wsName: string) => any[];
+    getSheetNames: () => string[];
+    init: () => Promise<this>;
+    update: (wsName: string, jsonData: any[]) => void;
+}
+declare class Workbook implements IWorkbook {
     private filePath;
     private workbook;
     constructor(filePath?: string);
