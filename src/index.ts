@@ -1,6 +1,6 @@
 import * as XPop from 'xlsx-populate'
 
-export default class Workbook {
+class Workbook {
   private filePath: string = ''
   private workbook: any = null
   constructor(filePath: string = '') {
@@ -84,3 +84,5 @@ export default class Workbook {
     return aoaData
   }
 }
+
+export = Workbook

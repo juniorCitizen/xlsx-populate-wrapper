@@ -34,9 +34,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var XPop = require("xlsx-populate");
-var Workbook = (function () {
+var Workbook = /** @class */ (function () {
     function Workbook(filePath) {
         if (filePath === void 0) { filePath = ''; }
         this.filePath = '';
@@ -51,16 +50,16 @@ var Workbook = (function () {
                     case 0:
                         _b.trys.push([0, 2, , 3]);
                         _a = this;
-                        return [4, XPop.fromFileAsync(this.filePath)];
+                        return [4 /*yield*/, XPop.fromFileAsync(this.filePath)];
                     case 1:
                         _a.workbook = _b.sent();
-                        return [2, this];
+                        return [2 /*return*/, this];
                     case 2:
                         error_1 = _b.sent();
                         this.filePath = '';
                         this.workbook = null;
                         throw error_1;
-                    case 3: return [2];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -87,14 +86,14 @@ var Workbook = (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4, this.workbook.toFileAsync(this.filePath)];
+                        return [4 /*yield*/, this.workbook.toFileAsync(this.filePath)];
                     case 1:
                         _a.sent();
-                        return [2, this];
+                        return [2 /*return*/, this];
                     case 2:
                         error_2 = _a.sent();
                         throw error_2;
-                    case 3: return [2];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -129,5 +128,5 @@ var Workbook = (function () {
     };
     return Workbook;
 }());
-exports.default = Workbook;
+module.exports = Workbook;
 //# sourceMappingURL=index.js.map

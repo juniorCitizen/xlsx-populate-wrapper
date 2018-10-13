@@ -1,4 +1,4 @@
-export default class Workbook {
+declare class Workbook {
     private filePath;
     private workbook;
     constructor(filePath?: string);
@@ -10,4 +10,5 @@ export default class Workbook {
     getHeadings(wsName: string): any[];
     private getAoaData;
 }
+export = Workbook;
 //# sourceMappingURL=index.d.ts.map
