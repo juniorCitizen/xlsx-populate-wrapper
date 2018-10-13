@@ -12,6 +12,12 @@ declare class Workbook implements IWorkbook {
     constructor(filePath?: string);
     init(): Promise<this>;
     getSheetNames(): string[];
+    /**
+     * get data from a particular worksheet
+     *
+     * @param wsName - name of the worksheet to get data from
+     * @return array of objects representing a record
+     */
     getData(wsName: string): any[];
     commit(): Promise<this>;
     update(wsName: string, jsonData: any[]): void;
