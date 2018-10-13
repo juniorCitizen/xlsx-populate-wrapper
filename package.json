@@ -28,15 +28,10 @@
   },
   "homepage": "https://github.com/chiayutsaipersonal/xlsx-populate-wrapper#readme",
   "dependencies": {
-    "lodash": "^4.17.11",
     "xlsx-populate": "^1.17.0"
   },
   "devDependencies": {
-    "@types/faker": "^4.1.4",
-    "@types/fs-extra": "^5.0.4",
     "@types/jest": "^23.3.5",
-    "faker": "^4.1.0",
-    "fs-extra": "^7.0.0",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
     "prettier-tslint": "^0.4.0",
