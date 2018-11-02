@@ -42,12 +42,14 @@
     "typescript": "^3.1.6"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prelint": "npm run format",
+    "lint": "tslint -p tsconfig.json",
+    "prebuild": "npm run lint",
     "build": "tsc",
     "coverage": "jest --coverage",
     "dev:test": "jest --watch",
     "dev": "tsc -w",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
     "test": "jest --bail"
   }
